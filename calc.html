@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.calc-butn').click(function(){
+        //$(this).hide();
+        //alert("button pressed");
+        var value = $(this).text();
+        
+        // replace when initial number is pressed
+        // var defult = $('.result').text();
+        // if(defult == "0"){
+        // 	$('.result').text(value);
+        // }
+        //alert(value);
+        $('.result').append(value);
+    });
+    $('.calc-butn-equal').click(function(){
+        //$(this).hide();
+        //alert("button pressed");
+        var value = $('.result').text();
+        value = eval(value);
+        //alert(value);
+        $('.result').text(value);
+    });
+    $('.calc-butn-ac').click(function(){
+        //$(this).hide();
+        //alert("button pressed");
+        var value = 0;
+        //alert(value);
+        $('.result').text(value);
+    });
+});
+</script>
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+  <div class="col-xs-12 result">0</div>
+</div>
+<div class="row">
+  <div id ="seven" class="calc-butn col-xs-3">7</div>
+  <div id ="eight" class="calc-butn col-xs-3">8</div>
+  <div id ="nine" class="calc-butn col-xs-3">9</div>
+  <div id ="multiply" class="calc-butn-ac col-xs-3">AC</div>
+</div>
+<div class="row">
+  <div id ="four" class="calc-butn col-xs-3">4</div>
+  <div id ="five" class="calc-butn col-xs-3">5</div>
+  <div id ="six" class="calc-butn col-xs-3">6</div>
+  <div id ="minus" class="calc-butn col-xs-3">*</div>
+</div>
+<div class="row">
+  <div id ="one" class="calc-butn col-xs-3">1</div>
+  <div id ="two" class="calc-butn col-xs-3">2</div>
+  <div id ="three" class="calc-butn col-xs-3">3</div>
+  <div id ="plus" class="calc-butn col-xs-3">-</div>
+</div>
+<div class="row">
+  <div id ="zero" class="calc-butn col-xs-3">0</div>
+  <div id ="dot" class="calc-butn col-xs-3">.</div>
+  <div id ="equal" class="calc-butn-equal col-xs-3">=</div>
+  <div id ="plus2" class="calc-butn col-xs-3">+</div>
+</div>
+</div>
+<style>
+.row > div {
+    margin-top:10px;
+    padding: 20px;
+    outline: 2px solid #ccc;
+    outline-offset: -10px;
+    -moz-outline-radius: 10px;
+    -webkit-outline-radius: 10px;
+    text-align: center;
+}
+.row .result{
+	text-align: right;
+}
+.calc-butn, .calc-butn-equal, .calc-butn-ac {
+	cursor: pointer;
+	/*cursor: hand;*/
+}
+</style>
+</body>
+</html>
